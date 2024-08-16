@@ -12,11 +12,11 @@ function Header() {
       <div className="flex w-1/2 justify-around">
         <div className="flex flex-col">
           <span>Borrow</span>
-          <span className="text-xl text-primary">$20.40</span>
+          <span className="text-xl text-primary">10.20 USDC</span>
         </div>
         <div className="flex flex-col">
           <span>To Pay</span>
-          <span className=" text-xl">$20.40</span>
+          <span className=" text-xl">10.20 USDC</span>
         </div>
         <div className="flex flex-col">
           <span>Cuotas</span>

@@ -57,7 +57,7 @@ const Page = () => {
               <div className="mr-10 flex h-full w-full flex-col justify-center gap-8">
                 <p>Please confirm this data first</p>
                 <div className="flex w-full bg-stroke-2 px-10 py-2">
-                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">min. $1</div>
+                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">min. 1 USDC</div>
                   <Input
                     type="number"
                     max={10}
@@ -68,7 +68,7 @@ const Page = () => {
                     onChange={handleAmountChange}
                     startContent={
                       <div className="pointer-events-none flex items-center">
-                        <span className="text-2xl font-bold text-primary ">$</span>
+                        <span className="text-2xl font-bold text-primary ">USDC</span>
                       </div>
                     }
                     className=" w-2/3 px-10 text-4xl "
@@ -79,7 +79,7 @@ const Page = () => {
                       fontWeight: "bolder",
                     }}
                   />
-                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">Max. $10</div>
+                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">Max. 10 USDC</div>
                 </div>
                 <div className="mt-4 flex flex-col gap-2 mb-10">
                   <span>In how many months do you want to pay?</span>
@@ -101,7 +101,7 @@ const Page = () => {
               <div className="relative right-0 flex w-2/5 flex-col items-center justify-center gap-2 bg-information-active py-4">
                 <div className="flex flex-col gap-1 text-center">
                   <p className="font-urbanist text-2xl text-white">Final Payment</p>
-                  <p className="text-3xl font-bold text-white">${finalAmount.toFixed(2)}</p>
+                  <p className="text-3xl font-bold text-white">{finalAmount.toFixed(2)} USDC</p>
                   <p className="font-urbanist text-sm text-white">Interest 2%</p>
                 </div>
                 <Divider className="bg-white" />
@@ -109,7 +109,7 @@ const Page = () => {
                   <li className="font-bold text-white">Payment dates:</li>
                   {paymentDates.map((payment, index) => (
                     <li key={index} className="text-white">
-                      {payment.date} - ${payment.amount}
+                      {payment.date} - USDC {payment.amount}
                     </li>
                   ))}
                 </ul>
@@ -119,9 +119,9 @@ const Page = () => {
             <div className=" w-full my-10 flex gap-2 items-center">
               <div className="auto">
                 <p> This is the variable collateral based on the history you built with us.</p>
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-2 items-center mb-6">
                   Collateral:
-                  <div className="text-4xl text-center">{finalAmount != 0 ? finalAmount + 0.5 : 0}$</div>
+                  <div className="text-4xl text-center">{finalAmount != 0 ? finalAmount + 0.5 : 0} USDC</div>
                   In base in your credit score.
                 </div>
                 <RequestLoanButton amount={amount * USD_MULT} duration={duration} />

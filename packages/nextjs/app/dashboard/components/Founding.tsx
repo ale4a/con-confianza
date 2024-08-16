@@ -18,7 +18,7 @@ function Founding() {
   return (
     <div className="flex h-1/2 flex-col items-center justify-between bg-white text-black">
       <div className="flex h-1/2 w-full">
-        <SquarePosition title="Total Funding Received" description="$0.00" subtitle="from last months" />
+        <SquarePosition title="Total Funding Received" description="0.00 USDC" subtitle="from last months" />
         <SquarePosition title="Cuotas" description="0/0" subtitle="from last week" />
       </div>
       <div className=" flex h-1/2 w-full">

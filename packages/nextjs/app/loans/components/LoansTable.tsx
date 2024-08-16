@@ -37,7 +37,7 @@ function LoansTable({ data }: { data: ILoansTable[] }) {
             return (
               <TableRow key={index}>
                 <TableCell className="text-base">{item.payment}</TableCell>
-                <TableCell className="text-center text-base">${item.mount}</TableCell>
+                <TableCell className="text-center text-base">{item.mount} USDC</TableCell>
                 <TableCell className="text-center text-base">{item.date}</TableCell>
                 <TableCell className="text-center text-base">
                   {item.status === "pay" && (
