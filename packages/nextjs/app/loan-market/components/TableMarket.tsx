@@ -2,19 +2,7 @@
 
 import React from "react";
 import { columns, users } from "../data";
-import {
-  Button,
-  Chip,
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow,
-  Tooltip,
-  User,
-  getKeyValue,
-} from "@nextui-org/react";
+import { Button, Chip, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, User } from "@nextui-org/react";
 
 // import {EditIcon} from "./EditIcon";
 // import {DeleteIcon} from "./DeleteIcon";
@@ -28,7 +16,7 @@ const statusColorMap = {
 };
 
 export default function App() {
-  const renderCell = React.useCallback((user, columnKey) => {
+  const renderCell = React.useCallback((user: any, columnKey: any) => {
     const cellValue = user[columnKey];
 
     switch (columnKey) {
@@ -46,7 +34,7 @@ export default function App() {
         );
       case "status":
         return (
-          <Chip className="capitalize" color={statusColorMap[user.status]} size="sm" variant="flat">
+          <Chip className="capitalize" color={statusColorMap ? "primary" : "default"} size="sm" variant="flat">
             {cellValue}
           </Chip>
         );
