@@ -48,7 +48,7 @@ const Page = () => {
 
   const handleAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
     let value = Number(event.target.value);
-    if (value > 50) value = 50;
+    if (value > 20) value = 20;
     setAmount(value);
   };
 
@@ -64,7 +64,7 @@ const Page = () => {
               <div className="mr-10 flex h-full w-full flex-col justify-center gap-8">
                 <p>Please confirm this data first</p>
                 <div className="flex w-full bg-stroke-2 px-10 py-2">
-                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">min. $10</div>
+                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">min. $20</div>
                   <Input
                     type="number"
                     max={50}
@@ -75,10 +75,11 @@ const Page = () => {
                     onChange={handleAmountChange}
                     startContent={
                       <div className="pointer-events-none flex items-center">
-                        <span className="text-2xl font-bold text-primary">$</span>
+                        <span className="text-2xl font-bold text-primary ">$</span>
                       </div>
                     }
-                    className=" w-2/3 px-10 text-4xl"
+                    className=" w-2/3 px-10 text-4xl "
+                    classNames={{ inputWrapper: "bg-white" }}
                     style={{
                       fontSize: "30px",
                       color: "#17D071",
@@ -122,9 +123,28 @@ const Page = () => {
               </div>
             </div>
 
-            <Button onClick={onOpen} color="primary" className="text-black w-1/5 py-4 mt-4" radius="full" size="lg">
-              Get
-            </Button>
+            <div className=" w-full my-10 flex gap-2 items-center">
+              <div className="auto">
+                <p> This is the variable collateral based on the history you built with us.</p>
+                <div className="flex gap-2 items-center">
+                  Collateral:
+                  <div className="text-4xl text-center">{finalAmount != 0 ? finalAmount + 0.5 : 0}$</div>
+                  In base in your credit score.
+                </div>
+                <Button
+                  onClick={() => {
+                    onOpen();
+                  }}
+                  color="primary"
+                  className="text-black w-1/5 py-4 mt-4 w-1/2"
+                  radius="full"
+                  size="lg"
+                >
+                  Get Loan
+                </Button>
+              </div>
+            </div>
+
             <Modal
               isOpen={isOpen}
               onClose={handleClose}

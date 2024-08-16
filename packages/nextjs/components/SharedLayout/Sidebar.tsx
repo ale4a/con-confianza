@@ -22,6 +22,11 @@ const links = [
     src: "/images/courses.svg",
     title: "Courses",
   },
+  {
+    href: "/market-loan",
+    src: "/images/courses.svg",
+    title: "Community of lenders",
+  },
 ];
 const Sidebar: React.FC = () => {
   const pathname = usePathname();

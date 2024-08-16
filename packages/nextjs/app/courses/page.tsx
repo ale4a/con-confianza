@@ -38,7 +38,7 @@ const page = () => {
                 <p>{card.description}</p>
               </CardBody>
               <Button className="flex w-1/3 items-center justify-center rounded-lg bg-[#FFD028] py-6 text-center">
-                <span className="mt-1 text-xl text-black">Coming</span>
+                <span className="text-xl text-black">Coming</span>
               </Button>
             </Card>
           ))}

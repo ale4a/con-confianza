@@ -10,20 +10,20 @@ import SharedLayout from "~~/components/SharedLayout";
 const loansData = [
   {
     payment: "1st payment",
-    mount: "17.00",
-    date: "04/09/2024",
+    mount: "6.80",
+    date: "16/10/2024",
     status: "pay",
   },
   {
     payment: "2st payment",
-    mount: "17.00",
-    date: "04/10/2024",
+    mount: "6.80",
+    date: "16/11/2024",
     status: "pending",
   },
   {
     payment: "3st payment",
-    mount: "17.00",
-    date: "04/11/2024",
+    mount: "6.80",
+    date: "16/12/2024",
     status: "pending",
   },
 ];

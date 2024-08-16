@@ -27,14 +27,10 @@ function LoansTable({ data }: { data: ILoansTable[] }) {
     <div className="bg-white px-10 py-4">
       <Table aria-label="Example static collection table" isCompact className="bg-white" removeWrapper>
         <TableHeader className="bg-transparent">
-          <TableColumn className="bg-white font-urbanist text-lg text-information">PAYMENT</TableColumn>
-          <TableColumn className="bg-white text-center font-urbanist text-lg text-information">
-            MONTO DE CUOTA
-          </TableColumn>
-          <TableColumn className="bg-white text-center font-urbanist text-lg text-information">
-            FECHA DE PAGO
-          </TableColumn>
-          <TableColumn className="bg-white text-center font-urbanist text-lg text-information">STATUS</TableColumn>
+          <TableColumn className="bg-white text-lg text-information">PAYMENT</TableColumn>
+          <TableColumn className="bg-white text-center text-lg text-information">FEE AMOUNT</TableColumn>
+          <TableColumn className="bg-white text-center text-lg text-information">PAYMENT DATE</TableColumn>
+          <TableColumn className="bg-white text-center text-lg text-information">STATUS</TableColumn>
         </TableHeader>
         <TableBody>
           {data.map((item, index) => {

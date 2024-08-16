@@ -9,58 +9,58 @@ import { Badge } from "@nextui-org/react";
 // import { useGame } from '@/components/Global/GameProvider';
 
 const challenges = [
-  // {
-  //   number: "01",
-  //   title: "OPEN OR CONNECT YOUR ACCOUNT",
-  //   subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   status: "no-done",
-  //   link: "/dashboard/challenge/01",
-  // },
-  // {
-  //   number: "02",
-  //   title: "ABRE UNA CUENTA FARCASTER",
-  //   subtitle: "Y conecta con coinbase",
-  //   status: "no-done",
-  //   link: "/dashboard/challenge/02",
-  //   challenges: [
-  //     {
-  //       title: "RETO 2: Abre o conecta tu cuenta Farcaster",
-  //       description: "Conectala con Coinbase",
-  //       label: "USUARIO DE farcaster",
-  //       input: "Escribe aquí tu usuario Farcaster",
-  //     },
-  //   ],
-  // },
-  // {
-  //   number: "03",
-  //   title: "AHORRA DURANTE 3 SEMANAS",
-  //   subtitle: "Y conecta con coinbase",
-  //   status: "coming",
-  //   link: "/dashboard/challenge/03",
-  //   challenges: [
-  //     {
-  //       title: "RETO 3: Ahorra 2 USD por una semana",
-  //       description: "Conectala con Coinbase",
-  //       label: "link de TRANSACCIÓN",
-  //       input: "Pega aquí el link de la transacción",
-  //     },
-  //   ],
-  // },
-  // {
-  //   number: "04",
-  //   title: "HAZ UNA TRANSFERENCIA SENCILLA",
-  //   subtitle: "Y conecta con coinbase",
-  //   status: "coming",
-  //   link: "/dashboard/challenge/04",
-  //   challenges: [
-  //     {
-  //       title: "RETO 4: Haz un swap de 1 USDC A Optimism",
-  //       description: "Conectala con Coinbase",
-  //       label: "link de TRANSACCIÓN",
-  //       input: "Pega aquí el link de la transacción",
-  //     },
-  //   ],
-  // },
+  {
+    number: "01",
+    title: "OPEN OR CONNECT YOUR ACCOUNT",
+    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    status: "no-done",
+    link: "/dashboard/challenge/01",
+  },
+  {
+    number: "02",
+    title: "ABRE UNA CUENTA FARCASTER",
+    subtitle: "Y conecta con coinbase",
+    status: "no-done",
+    link: "/dashboard/challenge/02",
+    challenges: [
+      {
+        title: "RETO 2: Abre o conecta tu cuenta Farcaster",
+        description: "Conectala con Coinbase",
+        label: "USUARIO DE farcaster",
+        input: "Escribe aquí tu usuario Farcaster",
+      },
+    ],
+  },
+  {
+    number: "03",
+    title: "AHORRA DURANTE 3 SEMANAS",
+    subtitle: "Y conecta con coinbase",
+    status: "coming",
+    link: "/dashboard/challenge/03",
+    challenges: [
+      {
+        title: "RETO 3: Ahorra 2 USD por una semana",
+        description: "Conectala con Coinbase",
+        label: "link de TRANSACCIÓN",
+        input: "Pega aquí el link de la transacción",
+      },
+    ],
+  },
+  {
+    number: "04",
+    title: "HAZ UNA TRANSFERENCIA SENCILLA",
+    subtitle: "Y conecta con coinbase",
+    status: "coming",
+    link: "/dashboard/challenge/04",
+    challenges: [
+      {
+        title: "RETO 4: Haz un swap de 1 USDC A Optimism",
+        description: "Conectala con Coinbase",
+        label: "link de TRANSACCIÓN",
+        input: "Pega aquí el link de la transacción",
+      },
+    ],
+  },
   {
     number: "01",
     title: "GET YOUR LOAN",
@@ -72,7 +72,7 @@ const challenges = [
 
 function LoanRoute() {
   const router = useRouter();
-  const gameState = 1;
+  const gameState = 5;
   return (
     <div className="h-full bg-white p-10">
       <h1 className="pb-2 text-3xl text-[#3268FF]">Start the route to request your loan!</h1>
@@ -133,12 +133,20 @@ function LoanRoute() {
                   </div>
                 </TableCell>
                 <TableCell>
-                  <p className="text-sm font-bold">{challenge.title}</p>
-                  <p className="text-xs text-gray-400">{challenge.subtitle}</p>
+                  <p className="text-sm font-bold -my-2">{challenge.title}</p>
+                  <p className="text-xs text-gray-400 my-1">{challenge.subtitle}</p>
                 </TableCell>
-                <TableCell className="w-full my-12 flex  items-center justify-center ">
+                <TableCell className="w-full flex  items-center justify-center ">
                   {gameState > index + 1 ? (
-                    <span className="text-center text-sm text-success">Sent and approved</span>
+                    <Button
+                      radius="full"
+                      className="bg-[#FFD028] text-black"
+                      // onClick={() => {
+                      //   router.push(challenge.link);
+                      // }}
+                    >
+                      Comming soon
+                    </Button>
                   ) : gameState === index + 1 ? (
                     <Button
                       radius="full"
@@ -150,7 +158,7 @@ function LoanRoute() {
                       Apply for loan
                     </Button>
                   ) : (
-                    <></>
+                    <> </>
                   )}
                 </TableCell>
               </TableRow>

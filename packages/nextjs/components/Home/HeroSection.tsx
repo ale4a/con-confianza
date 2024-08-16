@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
       <div className="container mx-auto flex text-center">
-        <div className="w-full md:w-1/2">
+        {/* <div className="w-full md:w-1/2">
           <iframe
             width="100%"
             height="400"
@@ -36,8 +36,8 @@ const HeroSection: React.FC = () => {
             allowFullScreen
             className="mx-auto"
           />
-        </div>
-        <div className="flex w-full flex-col items-center justify-center bg-white p-8 shadow-lg md:w-1/2">
+        </div> */}
+        <div className="flex w-full flex-col items-center justify-center bg-white p-8 shadow-lg ">
           <p className="mb-4 text-2xl text-black">
             We know that obtaining a loan is not easy, that is why we help you achieve your goals with microcredits.
           </p>
