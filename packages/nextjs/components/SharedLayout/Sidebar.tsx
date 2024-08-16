@@ -23,7 +23,7 @@ const links = [
     title: "Courses",
   },
   {
-    href: "/market-loan",
+    href: "/loan-market",
     src: "/images/courses.svg",
     title: "Community of lenders",
   },
