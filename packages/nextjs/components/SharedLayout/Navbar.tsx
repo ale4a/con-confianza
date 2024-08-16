@@ -11,7 +11,9 @@ function Navbar() {
   // const { address } = useAccount();
   return (
     <div className="flex h-full items-center justify-between text-black">
-      <div className="w-1/6 px-10 text-3xl text-urbanist">Welcome!</div>
+      <div className="w-1/5 px-10 text-3xl text-urbanist">
+        <span>Welcome! 🚀</span>
+      </div>
       <div className="flex items-center justify-center gap-2 px-10">
         {/* <LanguageSwitcher /> */}
         {/* {!address && <BlackCreateWalletButton />} */}

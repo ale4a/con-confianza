@@ -17,11 +17,11 @@ const links = [
     src: "/images/loans.svg",
     title: "Loans",
   },
-  // {
-  //   href: "/courses",
-  //   src: "/images/courses.svg",
-  //   title: "Courses",
-  // },
+  {
+    href: "/courses",
+    src: "/images/courses.svg",
+    title: "Courses",
+  },
 ];
 const Sidebar: React.FC = () => {
   const pathname = usePathname();
@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
         {/* <span className="text-2xl font-extrabold">Andes</span>
         <Image src="/images/logo-yellow.svg" alt="quests" width={24} height={24} className="mx-1" />
         <span className="text-2xl font-extralight text-[#19CD5F]">Finance</span> */}
-        <AndesFinanceLogo />
+        <AndesFinanceLogo theme={"light"} />
       </Link>
       <div className="flex-grow">
         {links.map((link, index) => (
@@ -53,7 +53,7 @@ const Sidebar: React.FC = () => {
           </Link>
         ))}
       </div>
-      {/* <div className="mt-auto">
+      <div className="mt-auto">
         <div className="mt-4">
           <Link
             href="/help"
@@ -74,7 +74,7 @@ const Sidebar: React.FC = () => {
             <span className="px-4">Settings</span>
           </Link>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

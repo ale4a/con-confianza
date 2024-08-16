@@ -22,13 +22,7 @@ const HeroSection: React.FC = () => {
           </Button>
         </div>
         <div className=" w-1/2">
-          <Image
-            src="/images/home/thinking_pepe.png"
-            alt="Hero Image"
-            width={500}
-            height={500}
-            className="rounded-lg"
-          />
+          <Image src="/images/home/mujer.png" alt="Hero Image" width={500} height={500} className="rounded-lg" />
         </div>
       </div>
       <div className="container mx-auto flex text-center">
@@ -44,10 +38,10 @@ const HeroSection: React.FC = () => {
           />
         </div>
         <div className="flex w-full flex-col items-center justify-center bg-white p-8 shadow-lg md:w-1/2">
-          <p className="mb-4 text-4xl text-black">
+          <p className="mb-4 text-2xl text-black">
             We know that obtaining a loan is not easy, that is why we help you achieve your goals with microcredits.
           </p>
-          <Button color="primary" variant="bordered" radius="full" className="font-urbanist text-black" size="lg">
+          <Button color="primary" variant="bordered" radius="full" className="text-black" size="lg">
             Calculate your loan
           </Button>
         </div>
