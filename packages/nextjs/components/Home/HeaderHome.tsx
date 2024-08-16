@@ -19,7 +19,7 @@ const HeaderHome: React.FC<ScrollComponentProps> = ({ scrollToSection, activeSec
       <NavbarContent className="w-full justify-between">
         <NavbarBrand>
           <Link color={activeSection === 0 ? undefined : "foreground"}>
-            <AndesFinanceLogo />
+            <AndesFinanceLogo theme="light" />
           </Link>
         </NavbarBrand>
         <div className="flex w-1/2 justify-center gap-6 lg:gap-20">

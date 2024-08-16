@@ -1,10 +1,8 @@
 "use client";
 
 import React, { ChangeEvent, useEffect, useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { Modal, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/modal";
-import { Button, Divider, Input, Slider } from "@nextui-org/react";
+import RequestLoanButton from "./RequestLoanButton";
+import { Divider, Input, Slider } from "@nextui-org/react";
 import SharedLayout from "~~/components/SharedLayout";
 
 const calculateFinalAmount = (amount: number): number => amount * 1.02;
@@ -13,6 +11,8 @@ interface Payment {
   date: string;
   amount: string;
 }
+
+const USD_MULT = 1000000;
 
 const calculateMonthlyPayments = (finalAmount: number, duration: number): Payment[] => {
   const months = duration;
@@ -23,8 +23,6 @@ const calculateMonthlyPayments = (finalAmount: number, duration: number): Paymen
 };
 
 const Page = () => {
-  const { isOpen, onClose, onOpen } = useDisclosure();
-  const router = useRouter();
   const [amount, setAmount] = useState<number>(0);
   const [duration, setDuration] = useState<number>(1);
   const [finalAmount, setFinalAmount] = useState<number>(0);
@@ -36,11 +34,6 @@ const Page = () => {
     setPaymentDates(calculateMonthlyPayments(finalAmt, duration));
   }, [amount, duration]);
 
-  const handleClose = () => {
-    onClose();
-    router.push("/loans");
-  };
-
   const handleDurationChange = (value: number | number[]) => {
     if (typeof value === "number") setDuration(value);
     else setDuration(value[0]);
@@ -48,7 +41,7 @@ const Page = () => {
 
   const handleAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
     let value = Number(event.target.value);
-    if (value > 20) value = 20;
+    if (value > 10) value = 10;
     setAmount(value);
   };
 
@@ -64,11 +57,11 @@ const Page = () => {
               <div className="mr-10 flex h-full w-full flex-col justify-center gap-8">
                 <p>Please confirm this data first</p>
                 <div className="flex w-full bg-stroke-2 px-10 py-2">
-                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">min. $20</div>
+                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">min. $1</div>
                   <Input
                     type="number"
-                    max={50}
-                    min={10}
+                    max={10}
+                    min={1}
                     placeholder="0.0"
                     labelPlacement="outside"
                     value={amount + ""}
@@ -86,7 +79,7 @@ const Page = () => {
                       fontWeight: "bolder",
                     }}
                   />
-                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">Max. $50</div>
+                  <div className="flex w-1/4 items-center justify-center text-sm text-gray-400">Max. $10</div>
                 </div>
                 <div className="mt-4 flex flex-col gap-2 mb-10">
                   <span>In how many months do you want to pay?</span>
@@ -131,45 +124,9 @@ const Page = () => {
                   <div className="text-4xl text-center">{finalAmount != 0 ? finalAmount + 0.5 : 0}$</div>
                   In base in your credit score.
                 </div>
-                <Button
-                  onClick={() => {
-                    onOpen();
-                  }}
-                  color="primary"
-                  className="text-black w-1/5 py-4 mt-4 w-1/2"
-                  radius="full"
-                  size="lg"
-                >
-                  Get Loan
-                </Button>
+                <RequestLoanButton amount={amount * USD_MULT} duration={duration} />
               </div>
             </div>
-
-            <Modal
-              isOpen={isOpen}
-              onClose={handleClose}
-              className="text-black"
-              classNames={{ closeButton: "text-primary font-bold text-3xl" }}
-            >
-              <ModalContent>
-                {onClose => (
-                  <>
-                    <ModalHeader className="flex flex-col items-center gap-5 pt-12">
-                      <Image src="/images/check.svg" width={50} height={50} alt="check" />
-                      <span className="text-center text-3xl text-[#1744F9]">Your loan has been disbursed!</span>
-                    </ModalHeader>
-                    {/* <ModalBody className="px-20">
-                      <p className="text-center">You can view the details</p>
-                    </ModalBody> */}
-                    <ModalFooter className="flex justify-center pb-12">
-                      <Button color="primary" onPress={onClose} className="px-8 py-6 text-black" radius="full">
-                        ACCEPT
-                      </Button>
-                    </ModalFooter>
-                  </>
-                )}
-              </ModalContent>
-            </Modal>
           </div>
         </div>
       </div>

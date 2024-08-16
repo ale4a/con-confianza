@@ -1,0 +1,24 @@
+type LoanTaken @entity(immutable: true) {
+  id: Bytes!
+  borrower: Bytes! # address
+  amount: BigInt! # uint256
+  interestRate: BigInt! # uint256
+  totalRepayment: BigInt! # uint256
+  monthlyInstallment: BigInt! # uint256
+  duration: BigInt! # uint256
+  startTime: BigInt! # uint256
+  nextPaymentDue: BigInt! # uint256
+  paidAmount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PaymentMade @entity(immutable: true) {
+  id: Bytes!
+  borrower: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

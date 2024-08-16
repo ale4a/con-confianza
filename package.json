@@ -43,6 +43,7 @@
     "node": ">=18.17.0"
   },
   "dependencies": {
+    "@graphprotocol/graph-ts": "0.32.0",
     "@pushprotocol/restapi": "^1.7.25",
     "dotenv": "^16.4.5",
     "ethers": "^6.13.2"

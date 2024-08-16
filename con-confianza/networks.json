@@ -1,0 +1,8 @@
+{
+  "scroll-sepolia": {
+    "ConConfianza": {
+      "address": "0x3B47C253674e2806DCB374d5181ed1e715e68492",
+      "startBlock": 6131522
+    }
+  }
+}

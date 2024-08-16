@@ -864,6 +864,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphprotocol/graph-ts@npm:0.32.0":
+  version: 0.32.0
+  resolution: "@graphprotocol/graph-ts@npm:0.32.0"
+  dependencies:
+    assemblyscript: 0.19.10
+  checksum: 9376ad625d3e439c9026c6aac15c82b43bb704c99469649e758bd27e68c3de3dcf36381a01ca76fea073f9e4ec507bccfa9ee4bb2b82bf67404419855efc735f
+  languageName: node
+  linkType: hard
+
 "@hapi/hoek@npm:^9.0.0, @hapi/hoek@npm:^9.3.0":
   version: 9.3.0
   resolution: "@hapi/hoek@npm:9.3.0"
@@ -5488,6 +5497,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@se-2/nextjs@workspace:packages/nextjs"
   dependencies:
+    "@graphprotocol/graph-ts": 0.32.0
     "@heroicons/react": ~2.0.11
     "@nextui-org/button": ^2.0.37
     "@nextui-org/input": ^2.2.4
@@ -7792,6 +7802,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"assemblyscript@npm:0.19.10":
+  version: 0.19.10
+  resolution: "assemblyscript@npm:0.19.10"
+  dependencies:
+    binaryen: 101.0.0-nightly.20210723
+    long: ^4.0.0
+  bin:
+    asc: bin/asc
+    asinit: bin/asinit
+  checksum: d4087bcbae402eb0e972a78d8dfee607b2b51f4b29fcee5359f4db3052912ec12492a8714916bed8424f7f495f9357c7c6ab2482ba1d4ea4a44c55a86df5a67c
+  languageName: node
+  linkType: hard
+
 "assertion-error@npm:^1.1.0":
   version: 1.1.0
   resolution: "assertion-error@npm:1.1.0"
@@ -8008,6 +8031,15 @@ __metadata:
   version: 2.3.0
   resolution: "binary-extensions@npm:2.3.0"
   checksum: bcad01494e8a9283abf18c1b967af65ee79b0c6a9e6fcfafebfe91dbe6e0fc7272bafb73389e198b310516ae04f7ad17d79aacf6cb4c0d5d5202a7e2e52c7d98
+  languageName: node
+  linkType: hard
+
+"binaryen@npm:101.0.0-nightly.20210723":
+  version: 101.0.0-nightly.20210723
+  resolution: "binaryen@npm:101.0.0-nightly.20210723"
+  bin:
+    wasm-opt: bin/wasm-opt
+  checksum: b1f7cc8e9fb4f1530e9454b5ea6deba17e2d863cea4efc6d0ba1b2af2325e9080c29df0ffeaf9708d455705a629a6a4fbef0ac29ed789a4e316b4c1437879f57
   languageName: node
   linkType: hard
 
@@ -13558,6 +13590,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"long@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "long@npm:4.0.0"
+  checksum: 16afbe8f749c7c849db1f4de4e2e6a31ac6e617cead3bdc4f9605cb703cd20e1e9fc1a7baba674ffcca57d660a6e5b53a9e236d7b25a295d3855cca79cc06744
+  languageName: node
+  linkType: hard
+
 "loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
@@ -16263,6 +16302,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
+    "@graphprotocol/graph-ts": 0.32.0
     "@pushprotocol/restapi": ^1.7.25
     dotenv: ^16.4.5
     ethers: ^6.13.2

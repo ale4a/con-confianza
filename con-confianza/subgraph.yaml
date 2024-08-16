@@ -1,0 +1,29 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ConConfianza
+    network: scroll-sepolia
+    source:
+      address: "0x3B47C253674e2806DCB374d5181ed1e715e68492"
+      abi: ConConfianza
+      startBlock: 6131522
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - LoanTaken
+        - PaymentMade
+      abis:
+        - name: ConConfianza
+          file: ./abis/ConConfianza.json
+      eventHandlers:
+        - event: LoanTaken(indexed address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleLoanTaken
+        - event: PaymentMade(indexed address,uint256)
+          handler: handlePaymentMade
+      file: ./src/con-confianza.ts

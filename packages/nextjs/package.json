@@ -14,6 +14,7 @@
     "vercel:yolo": "vercel --build-env NEXT_PUBLIC_IGNORE_BUILD_ERROR=true"
   },
   "dependencies": {
+    "@graphprotocol/graph-ts": "0.32.0",
     "@heroicons/react": "~2.0.11",
     "@nextui-org/button": "^2.0.37",
     "@nextui-org/input": "^2.2.4",
