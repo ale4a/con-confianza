@@ -82,7 +82,7 @@ function LoanRoute() {
           <TableColumn className="text-black">
             <Image src="/images/circle.svg" width={100} height={100} alt="circle" />
           </TableColumn>
-          <TableColumn>ROLE</TableColumn>
+          <TableColumn>LOAN INTERESTS</TableColumn>
           <TableColumn>STATUS</TableColumn>
         </TableHeader>
         <TableBody className="">
@@ -145,7 +145,7 @@ function LoanRoute() {
                       //   router.push(challenge.link);
                       // }}
                     >
-                      Comming soon
+                      Coming soon
                     </Button>
                   ) : gameState === index + 1 ? (
                     <Button

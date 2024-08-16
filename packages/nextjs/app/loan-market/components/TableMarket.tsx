@@ -3,6 +3,7 @@
 import React from "react";
 import { columns, users } from "../data";
 import {
+  Button,
   Chip,
   Table,
   TableBody,
@@ -40,7 +41,6 @@ export default function App() {
       case "role":
         return (
           <div className="flex flex-col">
-            <p className="text-bold text-sm capitalize">{cellValue}</p>
             <p className="text-bold text-sm capitalize text-default-400">{user.team}</p>
           </div>
         );
@@ -52,16 +52,26 @@ export default function App() {
         );
       case "actions":
         return (
-          <div className="relative flex items-center gap-2">
-            <Tooltip content="Details">
-              <span className="text-lg text-default-400 cursor-pointer active:opacity-50">{/* <EyeIcon /> */}</span>
+          <div className="relative flex items-center gap-2 items-center justify-center ">
+            {/* <Tooltip content="Details">
+              <span className="text-lg text-default-400 cursor-pointer active:opacity-50"></span>
             </Tooltip>
             <Tooltip content="Edit user">
-              <span className="text-lg text-default-400 cursor-pointer active:opacity-50">{/* <EditIcon /> */}</span>
+              <span className="text-lg text-default-400 cursor-pointer active:opacity-50"></span>
             </Tooltip>
             <Tooltip color="danger" content="Delete user">
-              <span className="text-lg text-danger cursor-pointer active:opacity-50">{/* <DeleteIcon /> */}</span>
-            </Tooltip>
+              <span className="text-lg text-danger cursor-pointer active:opacity-50"></span>
+            </Tooltip> */}
+            <Button
+              radius="full"
+              className="bg-[#40E891] text-black w-1/2 "
+              // onClick={() => {
+              //   router.push(challenge.link);
+              // }}
+            >
+              Loan Application
+            </Button>
+            {/* <span className="bg-[#FFD028]">Comming soon</span> */}
           </div>
         );
       default:
@@ -70,7 +80,13 @@ export default function App() {
   }, []);
 
   return (
-    <Table aria-label="Example table with custom cells">
+    <Table
+      aria-label="Example table with custom cells"
+      classNames={{
+        wrapper: "bg-white",
+        th: "bg-[#3268FF] text-white",
+      }}
+    >
       <TableHeader columns={columns}>
         {column => (
           <TableColumn key={column.uid} align={column.uid === "actions" ? "center" : "start"}>
